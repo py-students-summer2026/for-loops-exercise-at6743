@@ -24,3 +24,22 @@ def guess_number(low, high, num_attempts):
     :param num_attempts: The number of attempts the user is given to guess the correct number.
     :returns: True if the user answers any attempt correctly, False otherwise.
     """
+
+    import random 
+
+    # generate pseudo-random number in range
+    random_number = random.randint(low, high)
+ 
+    # tell user 
+    print(f"The possible numbers are from {low} to {high} !")
+
+    # for loop for repeating input process 
+
+    for attempts in range(num_attempts) : 
+        user_guess = input("What is your guess ?")
+
+        if user_guess.isdigit() and int(user_guess) == random_number : 
+            return True 
+        
+       
+    return False 
